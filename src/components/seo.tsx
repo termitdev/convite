@@ -4,7 +4,6 @@ interface SEOProps {
   title: string;
   description: string;
   canonicalUrl: string;
-  ogType?: "website" | "article" | "profile";
   jsonLd?: object;
 }
 
@@ -12,7 +11,6 @@ const SEO = ({
   title,
   description,
   canonicalUrl,
-  ogType = "website",
   jsonLd,
 }: SEOProps) => {
   const siteUrl = "https://convite.publiquenaliterare.com.br";
@@ -20,7 +18,7 @@ const SEO = ({
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
+      {/* SEO básico */}
       <title>{title}</title>
 
       <meta
@@ -48,54 +46,7 @@ const SEO = ({
         href={fullUrl}
       />
 
-      {/* Open Graph */}
-      <meta
-        property="og:type"
-        content={ogType}
-      />
-
-      <meta
-        property="og:title"
-        content={title}
-      />
-
-      <meta
-        property="og:description"
-        content={description}
-      />
-
-      <meta
-        property="og:url"
-        content={fullUrl}
-      />
-
-      <meta
-        property="og:site_name"
-        content="Literare Books International"
-      />
-
-      <meta
-        property="og:locale"
-        content="pt_BR"
-      />
-
-      {/* Twitter / X */}
-      <meta
-        name="twitter:card"
-        content="summary"
-      />
-
-      <meta
-        name="twitter:title"
-        content={title}
-      />
-
-      <meta
-        name="twitter:description"
-        content={description}
-      />
-
-      {/* JSON-LD Structured Data */}
+      {/* Dados estruturados */}
       {jsonLd && (
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
