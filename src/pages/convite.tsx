@@ -129,7 +129,8 @@ const Convite = () => {
 
             <AnimateOnView delay={0.25} className="relative">
               <MediaFrame
-                src="public\images\homepage\mauricio.png"
+               
+                src="/images/homepage/mauricio.png"
                 alt="Presidente do Conselho"
                 caption="Mauricio Sita, presidente do Conselho Literare Books"
                 ratio="4/5"
@@ -221,10 +222,10 @@ const Convite = () => {
             <div className="mt-16 grid gap-6 sm:grid-cols-2">
               <AnimateOnView>
                 <MediaFrame
-                  src="public\images\homepage\nova-sede.png"
-                  alt="Nova sede da Literare Books"
-                  caption="Nova sede"
-                  ratio="3/2"
+                src="/images/homepage/nova-sede.png"
+                alt="Nova sede da Literare Books"
+                caption="Nova sede"
+                ratio="3/2"
                 />
               </AnimateOnView>
               <AnimateOnView delay={0.12} className="sm:mt-12">
