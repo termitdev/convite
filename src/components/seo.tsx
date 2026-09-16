@@ -5,8 +5,6 @@ interface SEOProps {
   description: string;
   canonicalUrl: string;
   ogType?: "website" | "article" | "profile";
-  ogImage?: string;
-  twitterCard?: "summary" | "summary_large_image";
   jsonLd?: object;
 }
 
@@ -15,18 +13,10 @@ const SEO = ({
   description,
   canonicalUrl,
   ogType = "website",
-  ogImage,
-  twitterCard = "summary_large_image",
   jsonLd,
 }: SEOProps) => {
   const siteUrl = "https://convite.publiquenaliterare.com.br";
   const fullUrl = `${siteUrl}${canonicalUrl}`;
-
-  const fullImageUrl = ogImage
-    ? ogImage.startsWith("http")
-      ? ogImage
-      : `${siteUrl}${ogImage}`
-    : undefined;
 
   return (
     <Helmet>
@@ -89,24 +79,10 @@ const SEO = ({
         content="pt_BR"
       />
 
-      {fullImageUrl && (
-        <>
-          <meta
-            property="og:image"
-            content={fullImageUrl}
-          />
-
-          <meta
-            property="og:image:alt"
-            content={title}
-          />
-        </>
-      )}
-
       {/* Twitter / X */}
       <meta
         name="twitter:card"
-        content={twitterCard}
+        content="summary"
       />
 
       <meta
@@ -118,20 +94,6 @@ const SEO = ({
         name="twitter:description"
         content={description}
       />
-
-      {fullImageUrl && (
-        <>
-          <meta
-            name="twitter:image"
-            content={fullImageUrl}
-          />
-
-          <meta
-            name="twitter:image:alt"
-            content={title}
-          />
-        </>
-      )}
 
       {/* JSON-LD Structured Data */}
       {jsonLd && (
