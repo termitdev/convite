@@ -78,9 +78,11 @@ const Convite = () => {
         {/* Topo discreto */}
         <header className="border-b border-foreground/10">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-            <span className="text-sm uppercase tracking-[0.3em] text-foreground">
-              Literare Books
-            </span>
+            <img
+              src="/images/homepage/logo-literare.png"
+              alt="Literare Books"
+              className="h-10 w-auto object-contain"
+              />
             <a
               href="#contato"
               className="text-sm text-muted-foreground underline-offset-8 transition-colors hover:text-primary hover:underline"
@@ -127,9 +129,9 @@ const Convite = () => {
 
             <AnimateOnView delay={0.25} className="relative">
               <MediaFrame
-                src="/assets/hero-autor-crop.png"
-                alt="Autor da casa Literare Books"
-                caption="Autor da casa Literare Books"
+                src="public\images\homepage\mauricio.png"
+                alt="Presidente do Conselho"
+                caption="Mauricio Sita, presidente do Conselho Literare Books"
                 ratio="4/5"
               />
               <p className="mt-6 max-w-sm text-base leading-relaxed text-muted-foreground">
@@ -154,26 +156,46 @@ const Convite = () => {
           </div>
         </section>
 
-        {/* UM CONVITE DE AMIGO — vídeo vertical */}
-        <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-            <AnimateOnView>
-              <h2 className="text-[26px] font-medium leading-tight tracking-tight md:text-[34px]">
-                Um convite de amigo
-              </h2>
-              <p className="mt-5 text-lg text-muted-foreground">
-                Um recado rápido da casa, para você ver com calma.
-              </p>
-              <p className="mt-3 text-lg text-muted-foreground">
-                Seis segundos. Sem roteiro, sem venda.
-              </p>
-            </AnimateOnView>
+        ```tsx
+{/* UM CONVITE DE AMIGO — vídeo vertical */}
+<section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+  <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+    <AnimateOnView>
+      <h2 className="text-[26px] font-medium leading-tight tracking-tight md:text-[34px]">
+        Um convite de amigo
+      </h2>
 
-            <AnimateOnView delay={0.15}>
-              <VerticalVideoFrame />
-            </AnimateOnView>
-          </div>
-        </section>
+      <p className="mt-5 text-lg text-muted-foreground">
+        Um recado rápido da casa, para você ver com calma.
+      </p>
+
+      <p className="mt-3 text-lg text-muted-foreground">
+        
+          A Literare está vivendo uma fase nova. A casa mudou, novos projetos chegaram, novas histórias começaram mas algumas relações continuam fazendo sentido.
+
+          Por isso, este convite chegou até você.
+
+          Não é uma proposta pronta, nem uma conversa com pressa. É só uma forma de dizer que, se você também sente vontade de escrever novamente, a nossa porta continua aberta.
+
+          Talvez exista uma próxima história esperando para ser contada. E, quem sabe, ela possa nascer aqui outra vez.
+      </p>
+    </AnimateOnView>
+
+    <AnimateOnView delay={0.15}>
+      <div className="mx-auto w-full max-w-[380px] overflow-hidden rounded-sm">
+        <video
+          className="aspect-[9/16] h-auto w-full object-cover"
+          src="/images/homepage/video-convite.mp4"
+          controls
+          playsInline
+          preload="metadata"
+        />
+      </div>
+    </AnimateOnView>
+  </div>
+</section>
+```
+
 
         {/* FASE NOVA */}
         <section className="border-y border-foreground/10 bg-secondary/60 py-20 md:py-28">
@@ -199,7 +221,7 @@ const Convite = () => {
             <div className="mt-16 grid gap-6 sm:grid-cols-2">
               <AnimateOnView>
                 <MediaFrame
-                  src="/assets/nova-sede.png"
+                  src="public\images\homepage\nova-sede.png"
                   alt="Nova sede da Literare Books"
                   caption="Nova sede"
                   ratio="3/2"
@@ -207,10 +229,10 @@ const Convite = () => {
               </AnimateOnView>
               <AnimateOnView delay={0.12} className="sm:mt-12">
                 <MediaFrame
-                  src="/assets/bastidores-editorial.png"
+                  src="public\images\homepage\bastidores-editorial.png"
                   alt="Bastidores editoriais da Literare Books"
-                  caption="Bastidores editorial"
-                  ratio="3/2"
+                  caption="Equipe!"
+                  ratio="3/1.5"
                 />
               </AnimateOnView>
             </div>
@@ -222,9 +244,9 @@ const Convite = () => {
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <AnimateOnView>
               <MediaFrame
-                src="/assets/livros-momentos.png"
+                src="public\images\homepage\livros-momentos.png"
                 alt="Livros publicados pela Literare Books"
-                caption="Livros e momentos"
+                caption="Momentos"
                 ratio="4/5"
               />
             </AnimateOnView>
@@ -299,7 +321,7 @@ const Convite = () => {
           <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20">
             <AnimateOnView>
               <MediaFrame
-                src="/assets/equipe-1_5x.png"
+                src="public\images\homepage\equipe2.png"
                 alt="Equipe Literare Books"
                 caption="Equipe Literare Books"
                 ratio="3/2"
@@ -322,8 +344,11 @@ const Convite = () => {
 
         <footer className="border-t border-foreground/10 py-10">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <span className="uppercase tracking-[0.3em] text-foreground">Literare Books</span>
-            <span>Literare Books International</span>
+            <img
+              src="/images/homepage/logo-literare.png"
+              alt="Literare Books"
+              className="h-10 w-auto object-contain"
+              />
           </div>
         </footer>
       </main>

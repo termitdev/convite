@@ -6,10 +6,24 @@ import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 
 const fields = [
-  { name: "nome", label: "Nome", type: "text", autoComplete: "name" },
-  { name: "email", label: "Email", type: "email", autoComplete: "email" },
-  { name: "empresa", label: "Empresa", type: "text", autoComplete: "organization" },
-  { name: "cargo", label: "Cargo", type: "text", autoComplete: "organization-title" },
+  {
+    name: "nome",
+    label: "Nome Completo",
+    type: "text",
+    autoComplete: "name",
+  },
+  {
+    name: "email",
+    label: "E-mail",
+    type: "email",
+    autoComplete: "email",
+  },
+  {
+    name: "telefone",
+    label: "Telefone",
+    type: "tel",
+    autoComplete: "tel",
+  },
 ] as const;
 
 const LeadForm = () => {
@@ -18,34 +32,54 @@ const LeadForm = () => {
   const [aceite, setAceite] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
+
     const form = e.currentTarget;
     const data = new FormData(form);
-    setLoading(true);
 
-    const { error } = await supabase.from("literare_leads").insert({
-      nome: String(data.get("nome") ?? ""),
-      email: String(data.get("email") ?? ""),
-      empresa: String(data.get("empresa") ?? ""),
-      cargo: String(data.get("cargo") ?? ""),
-      aceite_comunicacoes: aceite,
-    });
+    if (!aceite) {
+      toast({
+        title: "Confirme o consentimento",
+        description:
+          "Marque a opção para receber comunicações da Editora Literare Books.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setLoading(true);
+    setSent(false);
+
+    const { error } = await supabase
+      .from("literare_leads")
+      .insert({
+        nome: String(data.get("nome") ?? "").trim(),
+        email: String(data.get("email") ?? "").trim(),
+        telefone: String(data.get("telefone") ?? "").trim(),
+        aceite_comunicacoes: aceite,
+      });
 
     setLoading(false);
 
     if (error) {
+      console.error("Erro ao enviar lead:", error);
+
       toast({
         title: "Não conseguimos enviar agora",
         description: "Tente novamente em instantes.",
         variant: "destructive",
       });
+
       return;
     }
 
     form.reset();
     setAceite(false);
     setSent(true);
+
     toast({
       title: "Recebemos seu contato",
       description: "Um editor entra em contato com você.",
@@ -54,7 +88,7 @@ const LeadForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5">
         {fields.map((field) => (
           <div key={field.name} className="space-y-2">
             <label
@@ -64,6 +98,7 @@ const LeadForm = () => {
               {field.label}
               <span className="text-primary">*</span>
             </label>
+
             <Input
               id={field.name}
               name={field.name}
@@ -80,21 +115,34 @@ const LeadForm = () => {
         <Checkbox
           id="aceite"
           checked={aceite}
-          onCheckedChange={(value) => setAceite(value === true)}
+          onCheckedChange={(value) =>
+            setAceite(value === true)
+          }
           className="mt-1 border-foreground/30 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
         />
-        <label htmlFor="aceite" className="text-sm leading-relaxed text-muted-foreground">
-          Eu concordo em receber comunicações da Editora Literare Books.
+
+        <label
+          htmlFor="aceite"
+          className="cursor-pointer text-sm leading-relaxed text-muted-foreground"
+        >
+          Eu concordo em receber comunicações da Editora
+          Literare Books.
         </label>
       </div>
 
       <p className="text-xs leading-relaxed text-muted-foreground/80">
-        A nossa empresa está comprometida a proteger e respeitar sua privacidade, utilizaremos
-        seus dados apenas para fins de marketing. Você pode alterar suas preferências a qualquer
+        A nossa empresa está comprometida a proteger e respeitar
+        sua privacidade. Utilizaremos seus dados apenas para fins
+        de marketing. Você pode alterar suas preferências a qualquer
         momento.
       </p>
 
-      <Button type="submit" size="lg" disabled={loading} className="w-full rounded-sm sm:w-auto">
+      <Button
+        type="submit"
+        size="lg"
+        disabled={loading}
+        className="w-full rounded-sm sm:w-auto"
+      >
         {loading ? "Enviando..." : "Cadastrar"}
       </Button>
 
@@ -108,3 +156,4 @@ const LeadForm = () => {
 };
 
 export default LeadForm;
+

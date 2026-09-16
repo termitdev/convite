@@ -1,8 +1,11 @@
+
 export const appConfig = {
-    name: "Revio",
-    description: "Revio is a payment processing platform that allows you to accept payments online and offline.",
-    url: "https://revio-template.lovable.dev",
-    logo: "/logo.svg",
-    favicon: "/favicon.ico",
-    ogImage: "/og-image.jpg",
-}
+  name: "Literare Books",
+  description:
+    "Literare Books International é uma editora dedicada a transformar histórias, ideias e experiências em livros que encontram seus leitores.",
+  url: "",
+  logo: "/images/homepage/logo-literare.png",
+  favicon: "/favicon.ico",
+  ogImage: "/images/homepage/og-image.jpg",
+};
+
