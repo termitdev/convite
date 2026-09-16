@@ -50,7 +50,7 @@ const AllPlansWithCustom = () => {
                   delay={index * 0.03}
                   className="flex items-center gap-2.5 py-5 border-b border-border/40 last:border-0 md:last:border-b"
                 >
-                  <SquareCheck className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+                  <SquareCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <span className="text-lg">
                     {feature}
                   </span>
@@ -85,7 +85,7 @@ const AllPlansWithCustom = () => {
                       <ul className="space-y-3">
                         {customPlanFeatures.map((feature, index) => (
                           <li key={index} className="flex items-start gap-3">
-                            <SquareCheck className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+                            <SquareCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                             <span className="text-lg">
                               {feature}
                             </span>
