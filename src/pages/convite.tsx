@@ -19,7 +19,7 @@ const fase = [
   },
   {
     numero: "03",
-    titulo: "Mesmo cuidado",
+    titulo: "Maior cuidado",
     texto:
       "O acompanhamento próximo, autor por autor, continua sendo a marca da casa.",
   },
@@ -165,7 +165,6 @@ const Convite = () => {
           </AnimateOnView>
         </div>
       </section>
-
       {/* UM CONVITE DE AMIGO — vídeo vertical */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
