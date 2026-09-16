@@ -20,6 +20,7 @@ import BlogDashboard from "./pages/dashboard/blog";
 import BlogEditor from "./pages/dashboard/blog/editor";
 import Features from "./pages/features";
 import Home from "./pages/home";
+import Convite from "./pages/convite";
 import CookiePolicyPage from "./pages/legal/cookie-policy";
 import PrivacyPolicyPage from "./pages/legal/privacy-&-policy";
 import TermsAndConditionPage from "./pages/legal/terms-&-condition";
@@ -45,7 +46,8 @@ const App = () => (
         <BrowserRouter>
           <AuthProvider>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Convite />} />
+              <Route path="/template" element={<Home />} />
               <Route path="/company" element={<Company />} />
               <Route path="/features" element={<Features />} />
               <Route path="/pricing" element={<Pricing />} />
