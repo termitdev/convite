@@ -67,7 +67,7 @@
   }
 
   body {
-    @apply text-foreground bg-white text-base leading-[1.4] antialiased;
+    @apply text-foreground bg-background text-base leading-[1.4] antialiased;
     font-family: 'Inter Tight', system-ui, sans-serif;
   }
 
@@ -133,7 +133,7 @@
   }
 
   .testimonial-video-gradient {
-    background: linear-gradient(180deg, rgba(97, 66, 255, 0) 35%, rgba(97, 66, 255, 0.7) 100%);
+    background: linear-gradient(180deg, rgba(44, 40, 35, 0) 35%, rgba(44, 40, 35, 0.75) 100%);
   }
 
   .glow-violet {
@@ -183,11 +183,11 @@
 
     0%,
     100% {
-      box-shadow: 0 0 20px hsl(239 84% 67% / 0.3);
+      box-shadow: 0 0 20px rgba(251, 179, 25, 0.3);
     }
 
     50% {
-      box-shadow: 0 0 40px hsl(239 84% 67% / 0.5);
+      box-shadow: 0 0 40px rgba(251, 179, 25, 0.5);
     }
   }
 }
