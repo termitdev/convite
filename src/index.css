@@ -5,49 +5,50 @@
 @layer base {
   :root {
 
-    --background: 255 255 255;
-    --foreground: 20 20 20;
+    /* Literare Books palette: #2C2823 (dark) + #FBB319 (gold) */
+    --background: 252 251 249;
+    --foreground: 44 40 35;
 
-    --card: 244 244 244;
-    --card-foreground: 50 50 50;
+    --card: 247 245 241;
+    --card-foreground: 44 40 35;
 
-    --primary: 97 66 255;
-    --primary-foreground: 255 255 255;
+    --primary: 251 179 25;
+    --primary-foreground: 44 40 35;
 
-    --secondary: 244 244 244;
-    --secondary-foreground: 50 50 50;
+    --secondary: 247 245 241;
+    --secondary-foreground: 44 40 35;
 
-    --muted: 190 190 190;
-    --muted-foreground: 110 110 110;
+    --muted: 231 227 220;
+    --muted-foreground: 122 114 102;
 
-    --accent: 97 66 255;
-    --accent-foreground: 255 255 255;
+    --accent: 251 179 25;
+    --accent-foreground: 44 40 35;
 
-    --border: 230 230 230;
-    --input: 50 50 50;
+    --border: 231 227 220;
+    --input: 44 40 35;
 
     --radius: 1.5rem;
 
-    --revio-obsidian: 20 20 20;
-    --revio-charcoal: 20 20 20;
-    --revio-violet: 97 66 255;
-    --revio-violet-glow: 97 66 255;
-    --revio-emerald: 100 100 100;
-    --revio-light: 244 244 244;
+    --revio-obsidian: 44 40 35;
+    --revio-charcoal: 44 40 35;
+    --revio-violet: 251 179 25;
+    --revio-violet-glow: 253 203 92;
+    --revio-emerald: 122 114 102;
+    --revio-light: 247 245 241;
     --revio-white: 255 255 255;
-    --revio-light-orchid: 216 160 223;
-    --revio-light-pink: 246 226 248;
-    --revio-light-green: 204 255 240;
+    --revio-light-orchid: 253 203 92;
+    --revio-light-pink: 253 240 214;
+    --revio-light-green: 240 237 231;
 
     /* Gradients */
-    --gradient-violet: linear-gradient(135deg, rgba(97, 66, 255, 1), rgba(139, 102, 255, 1));
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 8%));
+    --gradient-violet: linear-gradient(135deg, rgba(251, 179, 25, 1), rgba(224, 154, 11, 1));
+    --gradient-dark: linear-gradient(180deg, rgb(44 40 35), rgb(34 31 27));
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 
     /* Shadows */
-    --shadow-violet-glow: 0 0 60px rgba(97, 66, 255, 0.3);
-    --shadow-card: 0 4px 24px rgba(20, 20, 20, 0.08);
-    --shadow-elevated: 0 20px 60px rgba(20, 20, 20, 0.15);
+    --shadow-violet-glow: 0 0 60px rgba(251, 179, 25, 0.28);
+    --shadow-card: 0 4px 24px rgba(44, 40, 35, 0.08);
+    --shadow-elevated: 0 20px 60px rgba(44, 40, 35, 0.15);
 
     /* Spacing */
     --spacing-base: 16px;
