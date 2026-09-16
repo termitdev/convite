@@ -230,7 +230,7 @@ const Convite = () => {
               </AnimateOnView>
               <AnimateOnView delay={0.12} className="sm:mt-12">
                 <MediaFrame
-                  src="public\images\homepage\bastidores-editorial.png"
+                  src="/images/homepage/bastidores-editorial.png"
                   alt="Bastidores editoriais da Literare Books"
                   caption="Equipe!"
                   ratio="3/1.5"
@@ -245,7 +245,7 @@ const Convite = () => {
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <AnimateOnView>
               <MediaFrame
-                src="public\images\homepage\livros-momentos.png"
+                src="/images/homepage/livros-momentos.png"
                 alt="Livros publicados pela Literare Books"
                 caption="Momentos"
                 ratio="4/5"
@@ -322,7 +322,7 @@ const Convite = () => {
           <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1fr_1fr] lg:gap-20">
             <AnimateOnView>
               <MediaFrame
-                src="public\images\homepage\equipe2.png"
+                src="/images/homepage/equipe2.png"
                 alt="Equipe Literare Books"
                 caption="Equipe Literare Books"
                 ratio="3/2"
