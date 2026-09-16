@@ -62,6 +62,36 @@ export type Database = {
         }
         Relationships: []
       }
+      literare_leads: {
+        Row: {
+          aceite_comunicacoes: boolean
+          cargo: string
+          created_at: string
+          email: string
+          empresa: string
+          id: string
+          nome: string
+        }
+        Insert: {
+          aceite_comunicacoes?: boolean
+          cargo: string
+          created_at?: string
+          email: string
+          empresa: string
+          id?: string
+          nome: string
+        }
+        Update: {
+          aceite_comunicacoes?: boolean
+          cargo?: string
+          created_at?: string
+          email?: string
+          empresa?: string
+          id?: string
+          nome?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
